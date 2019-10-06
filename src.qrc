@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="LOGO">
+    <file>logo_trans_resized.png</file>
+    <file>logo_resized.jpg</file>
+    <file>logo_trans.png</file>
+    <file>linkedinlogo.png</file>
+  </qresource>
+</RCC>
