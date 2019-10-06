@@ -7,7 +7,7 @@ import csv
 import pandas as pd
 
 class LinkedIn():
-    #    CSV_PATH = 'write_script.csv'
+#    CSV_PATH = 'write_script.csv'
 
     def __init__(self, path, template):
         print('PATH = ', path)
@@ -15,6 +15,11 @@ class LinkedIn():
         self.path = path
         self.template = template
 
+    # --- Save only columns ---
+    # 1. Full Name
+    # 2. Primary Company
+    # 3. Primary Company Type
+    # 4. Primary Position
 
     def generate_pdtable(self):
         self.table = pd.read_csv(self.path)

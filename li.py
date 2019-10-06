@@ -35,6 +35,7 @@ class MyApp(QMainWindow):
         self.ui.next_person.clicked.connect(self.next_clicked)
         self.ui.template_combo.currentIndexChanged.connect(self.get_person_selected)
         self.ui.person_combo.currentIndexChanged.connect(self.get_person_selected)
+        self.ui.loading_label.hide()
 
 
     def file_clicked(self):
@@ -47,6 +48,7 @@ class MyApp(QMainWindow):
         self.persons = self.LI.get_persons()
 
         self.ui.filename_box.setPlainText(path)
+        self.ui.loading_label.show()
 
 
     def enter_clicked(self):
@@ -209,6 +211,7 @@ class MyApp(QMainWindow):
                    '{email}@email.com'.format(first=first, last=last, name=employee,
                                                              phone=self.person_dict[employee][1],
                                                              email=self.person_dict[employee][0])
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
