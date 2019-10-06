@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="15642260-173a-4bba-8696-baa71b544780" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/li.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3895">
+              <caret line="205" column="29" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="29" />
+              <folding>
+                <element signature="e#117#127#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>persons</find>
+      <find>consultant</find>
+      <find>row</find>
+      <find>qappl</find>
+      <find>get_</find>
+      <find>split</find>
+      <find>file</find>
+      <find>print</find>
+      <find>get</find>
+      <find>copy</find>
+      <find>doc_label</find>
+      <find>person_info</find>
+      <find>enter row</find>
+      <find>load</find>
+      <find>complete</find>
+      <find>get_per</find>
+      <find>logo</find>
+      <find>table</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/tk.py" />
+        <option value="$PROJECT_DIR$/ui_tk.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/linkedinscratch" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_5.txt" />
+        <option value="$PROJECT_DIR$/ui.py" />
+        <option value="$PROJECT_DIR$/li.py" />
+        <option value="$PROJECT_DIR$/../v2/linkedin.py" />
+        <option value="$PROJECT_DIR$/linkedin.py" />
+        <option value="$PROJECT_DIR$/../v3/linkedin.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="240" />
+    <option name="y" value="130" />
+    <option name="width" value="1440" />
+    <option name="height" value="780" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\itadmin\PycharmProjects\pyLinkedIn" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\itadmin\PycharmProjects\pyLinkedIn" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.li">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyLinkedIn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv/Lib/site-packages/PyQt5/uic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/Lib/site-packages/PyQt5/uic/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="li" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyLinkedIn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/li.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="linkedin" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyLinkedIn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/linkedin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyLinkedIn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ui_tk" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pyLinkedIn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui_tk.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.li" />
+        <item itemvalue="Python.linkedin" />
+        <item itemvalue="Python.ui" />
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.ui_tk" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15642260-173a-4bba-8696-baa71b544780" name="Default Changelist" comment="" />
+      <created>1558452959267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558452959267</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32719395" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/LinkedIn_UI.ui">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#775#779#0" expanded="true" />
+            <element signature="e#800#806#0" expanded="true" />
+            <element signature="e#830#836#0" expanded="true" />
+            <element signature="e#837#843#0" expanded="true" />
+            <element signature="e#885#891#0" expanded="true" />
+            <element signature="e#891#895#0" expanded="true" />
+            <element signature="e#896#900#0" expanded="true" />
+            <element signature="e#904#908#0" expanded="true" />
+            <element signature="e#908#912#0" expanded="true" />
+            <element signature="e#916#920#0" expanded="true" />
+            <element signature="e#920#924#0" expanded="true" />
+            <element signature="e#934#940#0" expanded="true" />
+            <element signature="e#949#955#0" expanded="true" />
+            <element signature="e#964#970#0" expanded="true" />
+            <element signature="e#971#977#0" expanded="true" />
+            <element signature="e#979#983#0" expanded="true" />
+            <element signature="e#983#987#0" expanded="true" />
+            <element signature="e#998#1004#0" expanded="true" />
+            <element signature="e#1012#1018#0" expanded="true" />
+            <element signature="e#1018#1022#0" expanded="true" />
+            <element signature="e#1056#1060#0" expanded="true" />
+            <element signature="e#1066#1070#0" expanded="true" />
+            <element signature="e#1070#1074#0" expanded="true" />
+            <element signature="e#1079#1083#0" expanded="true" />
+            <element signature="e#1083#1087#0" expanded="true" />
+            <element signature="e#1098#1104#0" expanded="true" />
+            <element signature="e#1188#1194#0" expanded="true" />
+            <element signature="e#1194#1198#0" expanded="true" />
+            <element signature="e#1199#1203#0" expanded="true" />
+            <element signature="e#1211#1217#0" expanded="true" />
+            <element signature="e#1324#1330#0" expanded="true" />
+            <element signature="e#1330#1334#0" expanded="true" />
+            <element signature="e#1368#1372#0" expanded="true" />
+            <element signature="e#1374#1378#0" expanded="true" />
+            <element signature="e#1378#1382#0" expanded="true" />
+            <element signature="e#1387#1391#0" expanded="true" />
+            <element signature="e#1391#1395#0" expanded="true" />
+            <element signature="e#1400#1404#0" expanded="true" />
+            <element signature="e#2505#2509#0" expanded="true" />
+            <element signature="e#2530#2536#0" expanded="true" />
+            <element signature="e#2560#2566#0" expanded="true" />
+            <element signature="e#2567#2573#0" expanded="true" />
+            <element signature="e#2615#2621#0" expanded="true" />
+            <element signature="e#2621#2625#0" expanded="true" />
+            <element signature="e#2626#2630#0" expanded="true" />
+            <element signature="e#2634#2638#0" expanded="true" />
+            <element signature="e#2638#2642#0" expanded="true" />
+            <element signature="e#2646#2650#0" expanded="true" />
+            <element signature="e#2650#2654#0" expanded="true" />
+            <element signature="e#2664#2670#0" expanded="true" />
+            <element signature="e#2679#2685#0" expanded="true" />
+            <element signature="e#2694#2700#0" expanded="true" />
+            <element signature="e#2701#2707#0" expanded="true" />
+            <element signature="e#2709#2713#0" expanded="true" />
+            <element signature="e#2713#2717#0" expanded="true" />
+            <element signature="e#2728#2734#0" expanded="true" />
+            <element signature="e#2742#2748#0" expanded="true" />
+            <element signature="e#2748#2752#0" expanded="true" />
+            <element signature="e#2786#2790#0" expanded="true" />
+            <element signature="e#2796#2800#0" expanded="true" />
+            <element signature="e#2800#2804#0" expanded="true" />
+            <element signature="e#2809#2813#0" expanded="true" />
+            <element signature="e#2813#2817#0" expanded="true" />
+            <element signature="e#2828#2834#0" expanded="true" />
+            <element signature="e#2918#2924#0" expanded="true" />
+            <element signature="e#2924#2928#0" expanded="true" />
+            <element signature="e#2929#2933#0" expanded="true" />
+            <element signature="e#2941#2947#0" expanded="true" />
+            <element signature="e#3054#3060#0" expanded="true" />
+            <element signature="e#3060#3064#0" expanded="true" />
+            <element signature="e#3107#3111#0" expanded="true" />
+            <element signature="e#3113#3117#0" expanded="true" />
+            <element signature="e#3117#3121#0" expanded="true" />
+            <element signature="e#3126#3130#0" expanded="true" />
+            <element signature="e#3130#3134#0" expanded="true" />
+            <element signature="e#3139#3143#0" expanded="true" />
+            <element signature="e#3959#3963#0" expanded="true" />
+            <element signature="e#3984#3990#0" expanded="true" />
+            <element signature="e#4014#4020#0" expanded="true" />
+            <element signature="e#4021#4027#0" expanded="true" />
+            <element signature="e#4069#4075#0" expanded="true" />
+            <element signature="e#4075#4079#0" expanded="true" />
+            <element signature="e#4080#4084#0" expanded="true" />
+            <element signature="e#4088#4092#0" expanded="true" />
+            <element signature="e#4092#4096#0" expanded="true" />
+            <element signature="e#4100#4104#0" expanded="true" />
+            <element signature="e#4104#4108#0" expanded="true" />
+            <element signature="e#4118#4124#0" expanded="true" />
+            <element signature="e#4133#4139#0" expanded="true" />
+            <element signature="e#4148#4154#0" expanded="true" />
+            <element signature="e#4155#4161#0" expanded="true" />
+            <element signature="e#4163#4167#0" expanded="true" />
+            <element signature="e#4167#4171#0" expanded="true" />
+            <element signature="e#4182#4188#0" expanded="true" />
+            <element signature="e#4196#4202#0" expanded="true" />
+            <element signature="e#4202#4206#0" expanded="true" />
+            <element signature="e#4240#4244#0" expanded="true" />
+            <element signature="e#4250#4254#0" expanded="true" />
+            <element signature="e#4254#4258#0" expanded="true" />
+            <element signature="e#4263#4267#0" expanded="true" />
+            <element signature="e#4267#4271#0" expanded="true" />
+            <element signature="e#4282#4288#0" expanded="true" />
+            <element signature="e#4372#4378#0" expanded="true" />
+            <element signature="e#4378#4382#0" expanded="true" />
+            <element signature="e#4383#4387#0" expanded="true" />
+            <element signature="e#4395#4401#0" expanded="true" />
+            <element signature="e#4508#4514#0" expanded="true" />
+            <element signature="e#4514#4518#0" expanded="true" />
+            <element signature="e#4534#4538#0" expanded="true" />
+            <element signature="e#4540#4544#0" expanded="true" />
+            <element signature="e#4544#4548#0" expanded="true" />
+            <element signature="e#4553#4557#0" expanded="true" />
+            <element signature="e#4557#4561#0" expanded="true" />
+            <element signature="e#4566#4570#0" expanded="true" />
+            <element signature="e#5138#5144#0" expanded="true" />
+            <element signature="e#5158#5164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tk.py" />
+    <entry file="file://$PROJECT_DIR$/ui_tk.py" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.txt" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/linkedinscratch" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/PyQt5/uic/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="91" column="33" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/core/indexes/base.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="2933" column="67" selection-start-line="2933" selection-start-column="67" selection-end-line="2933" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_4.txt" />
+    <entry file="file://$PROJECT_DIR$/src.qrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.txt" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.txt" />
+    <entry file="file://$PROJECT_DIR$/linkedin_copy.py" />
+    <entry file="file://$PROJECT_DIR$/ui_copy.py" />
+    <entry file="file://$PROJECT_DIR$/LinkedIn_UI_copy.ui">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.txt" />
+    <entry file="file://$PROJECT_DIR$/li_copy.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pandas/io/parsers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8714">
+          <caret line="1852" selection-start-line="1852" selection-end-line="1852" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../v1/linkedin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linkedin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="e#191#201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1712">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../v2/linkedin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../v3/linkedin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/li.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3895">
+          <caret line="205" column="29" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="29" />
+          <folding>
+            <element signature="e#117#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

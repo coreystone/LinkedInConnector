@@ -36,66 +36,98 @@ class MyApp(QMainWindow):
         self.ui.template_combo.currentIndexChanged.connect(self.get_person_selected)
         self.ui.person_combo.currentIndexChanged.connect(self.get_person_selected)
         self.ui.loading_label.hide()
+        self.ui.invalidfile_label.hide()
+        self.ui.invalidrow_label.hide()
+        self.ui.complete_label.hide()
+        self.ui.selectafile_label.hide()
+        self.ui.corey.hide()
+
+        self.LI = None
 
 
     def file_clicked(self):
         path = self.ui.filename_box.toPlainText()
+        if path == 'Enter CSV file name               (eg, contacts.csv)':
+            path = ''
         template = self.get_template_selected()
 
-        self.LI = LinkedIn(path, template)
-        self.LI.row_number = 1
-        self.LI.generate_pdtable()
-        self.persons = self.LI.get_persons()
+        try:
+            self.LI = LinkedIn(path, template)
+            self.LI.row_number = 1
+            self.LI.generate_pdtable()
+            self.persons = self.LI.get_persons()
 
-        self.ui.filename_box.setPlainText(path)
-        self.ui.loading_label.show()
+            self.ui.filename_box.setPlainText(path)
+            self.ui.loading_label.show()
+            self.ui.invalidfile_label.hide()
+            self.ui.selectafile_label.hide()
+
+        except FileExistsError: # too many files to open just one
+            self.ui.selectafile_label.show()
+
+        except FileNotFoundError:
+            self.ui.invalidfile_label.show()
 
 
     def enter_clicked(self):
-        while True:
-            try:
-                row = int(self.ui.row_box.toPlainText())
-                self.LI.row_number = row
-                break
-            except:
-                self.ui.row_box.setPlainText('Invalid number: try again')
+        try:
+            row = int(self.ui.row_box.toPlainText())
 
-        self.ui.row_box.setPlainText(str(self.LI.row_number))
-        self.ui.person_counter.setText(str(self.LI.row_number) + ' / ' + str(self.LI.max_rows + 1))
+            if self.LI != None and 0 <= row < self.LI.max_rows:
+                self.LI.row_number = row if row != 1 else row + 1
+                self.ui.row_box.setPlainText(str(self.LI.row_number))
+                self.ui.person_counter.setText(str(self.LI.row_number) + ' / ' + str(self.LI.max_rows + 1))
 
-        person = self.persons[self.LI.row_number - 2]
+                person = self.persons[self.LI.row_number - 2]
 
-        person_name, person_company, person_type, person_role = person[0], person[1], person[2], person[3]
-        self.ui.person_info.setPlainText(person_name + '\n' + person_company + '\n' + person_type + '\n' + person_role)
-        self.ui.person_msg.setPlainText(str(self.generate_msg(person)))
+                person_name, person_company, person_type, person_role = person[0], person[1], person[2], person[3]
+                self.ui.person_info.setPlainText(
+                    person_name + '\n' + person_company + '\n' + person_type + '\n' + person_role)
+                self.ui.person_msg.setPlainText(str(self.generate_msg(person)))
+                self.ui.invalidrow_label.hide()
+
+            elif self.LI != None and row >= self.LI.max_rows:
+                self.ui.complete_label.show()
+
+            else:
+                self.ui.invalidrow_label.show()
+
+        except ValueError:
+            self.ui.invalidrow_label.show()
 
 
     def found_clicked(self):
-        self.LI.write_found()
-        self.next_clicked()
+        if self.LI != None:
+            self.LI.write_found()
+            self.next_clicked()
 
 
     def not_found_clicked(self):
-        self.LI.write_not_found()
-        self.next_clicked()
+        if self.LI != None:
+            self.LI.write_not_found()
+            self.next_clicked()
 
 
     def person_info_clicked(self):
-        text = self.ui.person_info.toPlainText()
-        name_and_company = text.split('\n')[:2]
-        text = name_and_company[0] + ' ' + name_and_company[1]
-        text = text.strip(',')
-        subprocess.run(['clip.exe'], input=text.strip().encode('utf-16'), check=True)
+        if self.LI != None:
+            text = self.ui.person_info.toPlainText()
+            name_and_company = text.split('\n')[:2]
+            text = name_and_company[0] + ' ' + name_and_company[1]
+            text = text.strip(',')
+            subprocess.run(['clip.exe'], input=text.strip().encode('utf-16'), check=True)
 
 
     def person_msg_clicked(self):
-        text = self.ui.person_msg.toPlainText()
-        subprocess.run(['clip.exe'], input=text.strip().encode('utf-16'), check=True)
+        if self.LI != None:
+            text = self.ui.person_msg.toPlainText()
+            subprocess.run(['clip.exe'], input=text.strip().encode('utf-16'), check=True)
 
 
     def next_clicked(self):
-        self.LI.row_number += 1
-        self.set_window()
+        if self.LI != None:
+            self.LI.row_number += 1
+            self.set_window()
+            self.ui.invalidrow_label.hide()
 
 
     def get_person_selected(self):
@@ -154,20 +186,6 @@ class MyApp(QMainWindow):
                                                                  email=self.person_dict[employee][0])
 
 
-            elif ('Executive' or 'Director') in type or ('Executive' or 'Director') in role:
-                return 'Dear {first} {last},\n\n' \
-                       'I am expanding my contact base of well-established business executives particularly ' \
-                       'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
-                       'Regards,\n' \
-                       '{name}\n' \
-                       'Global Capital Markets Inc.\n' \
-                       '{phone}\n' \
-                       '{email}@email.com'.format(first=first, last=last,
-                                                                 name=employee,
-                                                                 phone=self.person_dict[employee][1],
-                                                                 email=self.person_dict[employee][0])
-
-
             elif ('Law' or 'Attorney') in type or ('Law' or 'Attorney') in role:
                 return 'Dear {first} {last},\n\n' \
                        'I am expanding my contact base of well-established M&A/Corporate Finance attorneys ' \
@@ -182,7 +200,24 @@ class MyApp(QMainWindow):
                                                                  email=self.person_dict[employee][0])
 
 
+            elif (any(x in type.split() for x in {'Executive', 'Director', 'Manager', 'Managing'})) or (any(x in role.split() for x in {'Executive', 'Director', 'Manager', 'Managing'})):
+                print("GOOD")
+                return 'Dear {first} {last},\n\n' \
+                       'I am expanding my contact base of well-established business executives particularly ' \
+                       'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
+                       'Regards,\n' \
+                       '{name}\n' \
+                       'Global Capital Markets Inc.\n' \
+                       '{phone}\n' \
+                       '{email}@email.com'.format(first=first, last=last,
+                                                                 name=employee,
+                                                                 phone=self.person_dict[employee][1],
+                                                                 email=self.person_dict[employee][0])
+
+
             else:
+                print(role.split())
+                print(type.split())
                 return 'Dear {first} {last},\n\n' \
                        'I am expanding my contact base of well-established _____________ particularly' \
                        'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
@@ -211,7 +246,6 @@ class MyApp(QMainWindow):
                    '{email}@email.com'.format(first=first, last=last, name=employee,
                                                              phone=self.person_dict[employee][1],
                                                              email=self.person_dict[employee][0])
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

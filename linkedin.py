@@ -4,6 +4,7 @@
 # A script that reads from the LinkedIn CSV for finding potential clients,
 # (soon to be) providing a GUI to facilitate finding and marking off members.
 import csv
+import os, glob
 import pandas as pd
 
 class LinkedIn():
@@ -12,7 +13,21 @@ class LinkedIn():
     def __init__(self, path, template):
         print('PATH = ', path)
         print('template = ', template)
-        self.path = path
+
+        if path == '':
+            os.chdir('C:/Users/itadmin/PycharmProjects/LinkedIn Program')
+            files = [file for file in glob.glob('*.csv')]
+            if len(files) == 1:
+                self.path = files[0]
+            else:
+                raise FileExistsError
+
+        if os.path.exists(path):
+            self.path = path
+
+        else:
+            raise FileNotFoundError
+
         self.template = template
 
     # --- Save only columns ---
@@ -20,6 +35,7 @@ class LinkedIn():
     # 2. Primary Company
     # 3. Primary Company Type
     # 4. Primary Position
+
 
     def generate_pdtable(self):
         self.table = pd.read_csv(self.path)

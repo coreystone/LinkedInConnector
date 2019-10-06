@@ -87,6 +87,7 @@ class Ui_Dialog(object):
         self.sig_label = QtWidgets.QLabel(Dialog)
         self.sig_label.setGeometry(QtCore.QRect(380, 460, 91, 31))
         self.sig_label.setObjectName("sig_label")
+        self.GCMLogo.setPixmap((QPixmap('new_logo_trans.png')))
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -124,7 +125,7 @@ class Ui_Dialog(object):
         self.person_combo.setItemText(5, _translate("Dialog", "Kimberly V"))
         self.person_combo.setItemText(6, _translate("Dialog", "Gunnar L"))
         self.person_combo.setItemText(7, _translate("Dialog", "Jarrett L"))
-        self.GCMLogo.setText(_translate("Dialog", "<html><head/><body><p><img src=\":/LOGO/logo_trans_resized.png\"/></p></body></html>"))
+        self.GCMLogo.setText(_translate("Dialog", "<html><head/><body><p><img src=\":/LOGO/new_logo_trans.png\"/></p></body></html>"))
         self.linkedinLogo.setText(_translate("Dialog", "<html><head/><body><p><img src=\":/LOGO/linkedinlogo.png\"/></p></body></html>"))
         self.filename_box.setHtml(_translate("Dialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
