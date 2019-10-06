@@ -14,9 +14,6 @@ class MyApp(QMainWindow):
         super(MyApp, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.LI = LinkedIn()
-        self.persons = self.LI.get_persons()
-        self.LI.row_number = 1
         self.current_person = self.get_person_selected()
         self.person_dict = {'Mark W' : ('mw', 'SANITIZED'),
                             'Hector S' : ('hs', 'SANITIZED'),
@@ -28,7 +25,6 @@ class MyApp(QMainWindow):
                             'Kimberly V':
                                 ('kvp', 'SANITIZED')
                             }
-        self.path = str()
 
         self.ui.file_enter.clicked.connect(self.file_clicked)
         self.ui.row_enter.clicked.connect(self.enter_clicked)
@@ -42,8 +38,16 @@ class MyApp(QMainWindow):
 
 
     def file_clicked(self):
-        self.LI.path = self.ui.file_box.toPlainText()
-        self.ui.file_box.setPlainText(self.LI.path)
+        path = self.ui.filename_box.toPlainText()
+        template = self.get_template_selected()
+
+        self.LI = LinkedIn(path, template)
+        self.LI.row_number = 1
+        self.LI.generate_pdtable()
+        self.persons = self.LI.get_persons()
+
+        self.ui.filename_box.setPlainText(path)
+
 
     def enter_clicked(self):
         while True:
@@ -105,84 +109,106 @@ class MyApp(QMainWindow):
         self.ui.person_counter.setText(str(self.LI.row_number) + ' / ' + str(self.LI.max_rows + 1))
 
         person = self.persons[self.LI.row_number - 2]
-        person_name, person_company, person_type, person_role = person[0], person[1], person[2], person[3]
-        self.ui.person_info.setPlainText(person_name + '\n' + person_company + '\n' + person_type + '\n' + person_role)
-        sender = self.get_person_selected()
-        self.ui.person_msg.setPlainText(str(self.generate_msg(sender)))
+
+        if self.get_template_selected() == 'Default':
+            person_name, person_company, person_type, person_role = person[0], person[1], person[2], person[3]
+            self.ui.person_info.setPlainText(person_name + '\n' + person_company + '\n' + person_type + '\n' + person_role)
+        else:
+            person_name, person_company = person[0], person[1]
+            self.ui.person_info.setPlainText(person_name + '\n' + person_company)
+        self.ui.person_msg.setPlainText(str(self.generate_msg(person)))
 
 
     def generate_msg(self, person):
-        name, type, role = person[0], person[2], person[3]
-        name = name.split()
-        first, last = name[0], name[1]
-        employee = self.get_person_selected()
-        if 'Account' in type or 'Account' in role:
+        if self.get_template_selected() == 'Default':
+            name, type, role = person[0], person[2], person[3]
+            name = name.split()
+            first, last = name[0], name[1]
+            employee = self.get_person_selected()
+
+            if 'Account' in type or 'Account' in role:
+                return 'Dear {first} {last},\n\n' \
+                       'I am expanding my contact base of highly regarded accounting professionals ' \
+                       'with a practice focus in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
+                       'Regards,\n' \
+                       '{name}\n' \
+                       'Global Capital Markets Inc.\n' \
+                       '{phone}\n' \
+                       '{email}@email.com'.format(first=first, last=last, name=employee,
+                                                                        phone=self.person_dict[employee][1], email=self.person_dict[employee][0])
+
+
+            elif 'Consult' in type or 'Consult' in role:
+                return 'Dear {first} {last},\n\n' \
+                       'I am expanding my contact base of well-established business consultants particularly ' \
+                       'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
+                       'Regards,\n' \
+                       '{name}\n' \
+                       'Global Capital Markets Inc.\n' \
+                       '{phone}\n' \
+                       '{email}@email.com'.format(first=first, last=last,
+                                                                 name=employee,
+                                                                 phone=self.person_dict[employee][1],
+                                                                 email=self.person_dict[employee][0])
+
+
+            elif ('Executive' or 'Director') in type or ('Executive' or 'Director') in role:
+                return 'Dear {first} {last},\n\n' \
+                       'I am expanding my contact base of well-established business executives particularly ' \
+                       'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
+                       'Regards,\n' \
+                       '{name}\n' \
+                       'Global Capital Markets Inc.\n' \
+                       '{phone}\n' \
+                       '{email}@email.com'.format(first=first, last=last,
+                                                                 name=employee,
+                                                                 phone=self.person_dict[employee][1],
+                                                                 email=self.person_dict[employee][0])
+
+
+            elif ('Law' or 'Attorney') in type or ('Law' or 'Attorney') in role:
+                return 'Dear {first} {last},\n\n' \
+                       'I am expanding my contact base of well-established M&A/Corporate Finance attorneys ' \
+                       'as a resource for our firm’s clients.\n\n' \
+                       'Regards,\n' \
+                       '{name}\n' \
+                       'Global Capital Markets Inc.\n' \
+                       '{phone}\n' \
+                       '{email}@email.com'.format(first=first, last=last,
+                                                                 name=employee,
+                                                                 phone=self.person_dict[employee][1],
+                                                                 email=self.person_dict[employee][0])
+
+
+            else:
+                return 'Dear {first} {last},\n\n' \
+                       'I am expanding my contact base of well-established _____________ particularly' \
+                       'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
+                       'Regards,\n' \
+                       '{name}\n' \
+                       'Global Capital Markets Inc.\n' \
+                       '{phone}\n' \
+                       '{email}@email.com'.format(first=first, last=last,
+                                                                 name=employee,
+                                                                 phone=self.person_dict[employee][1],
+                                                                 email=self.person_dict[employee][0])
+
+
+        elif self.get_template_selected() == 'Law Firms':
+            name = person[0]
+            name = name.split()
+            first, last = name[0], name[1]
+            employee = self.get_person_selected()
             return 'Dear {first} {last},\n\n' \
-                   'I am expanding my contact base of highly regarded accounting professionals ' \
-                   'with a practice focus in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
-                   'Regards,\n' \
-                   '{name}\n' \
-                   'Global Capital Markets Inc.\n' \
-                   '{phone}\n' \
-                   '{email}@email.com'.format(first=first, last=last, name=employee,
-                                                                    phone=self.person_dict[employee][1], email=self.person_dict[employee][0])
-
-
-        elif 'Consult' in type or 'Consult' in role:
-            return 'Dear {first} {last},\n\n' \
-                   'I am expanding my contact base of well-established business consultants particularly ' \
-                   'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
-                   'Regards,\n' \
-                   '{name}\n' \
-                   'Global Capital Markets Inc.\n' \
-                   '{phone}\n' \
-                   '{email}@email.com'.format(first=first, last=last,
-                                                             name=employee,
-                                                             phone=self.person_dict[employee][1],
-                                                             email=self.person_dict[employee][0])
-
-
-        elif ('Executive' or 'Director') in type or ('Executive' or 'Director') in role:
-            return 'Dear {first} {last},\n\n' \
-                   'I am expanding my contact base of well-established business executives particularly ' \
-                   'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
-                   'Regards,\n' \
-                   '{name}\n' \
-                   'Global Capital Markets Inc.\n' \
-                   '{phone}\n' \
-                   '{email}@email.com'.format(first=first, last=last,
-                                                             name=employee,
-                                                             phone=self.person_dict[employee][1],
-                                                             email=self.person_dict[employee][0])
-
-
-        elif ('Law' or 'Attorney') in type or ('Law' or 'Attorney') in role:
-            return 'Dear {first} {last},\n\n' \
-                   'I am expanding my contact base of well-established M&A/Corporate Finance attorneys ' \
+                   'I am expanding my contact base of highly regarded M&A/Corporate Finance attorneys ' \
                    'as a resource for our firm’s clients.\n\n' \
                    'Regards,\n' \
                    '{name}\n' \
                    'Global Capital Markets Inc.\n' \
                    '{phone}\n' \
-                   '{email}@email.com'.format(first=first, last=last,
-                                                             name=employee,
+                   '{email}@email.com'.format(first=first, last=last, name=employee,
                                                              phone=self.person_dict[employee][1],
                                                              email=self.person_dict[employee][0])
-
-
-        else:
-            return 'Dear {first} {last},\n\n' \
-                   'I am expanding my contact base of well-established _____________ particularly' \
-                   'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
-                   'Regards,\n' \
-                   '{name}\n' \
-                   'Global Capital Markets Inc.\n' \
-                   '{phone}\n' \
-                   '{email}@email.com'.format(first=first, last=last,
-                                                             name=employee,
-                                                             phone=self.person_dict[employee][1],
-                                                             email=self.person_dict[employee][0])
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

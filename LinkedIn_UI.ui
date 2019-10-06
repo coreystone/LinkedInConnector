@@ -329,6 +329,32 @@ p, li { white-space: pre-wrap; }
     <string>Row</string>
    </property>
   </widget>
+  <widget class="QLabel" name="loading_label">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>180</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Loading complete</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="doc_label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>241</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>For documentation, refer to: https://link.com</string>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="src.qrc"/>
