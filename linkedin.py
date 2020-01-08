@@ -1,13 +1,13 @@
-# 5/21/2019
 # Written by Corey Stone
 
 # A script that reads from the LinkedIn CSV for finding potential clients,
-# (soon to be) providing a GUI to facilitate finding and marking off members.
+# providing a GUI to facilitate finding and marking off members.
 import csv
 import os, glob
 import pandas as pd
 
 class LinkedIn():
+    """ Stores the CSV file and parses into usable table of Persons. """
 #    CSV_PATH = 'write_script.csv'
 
     def __init__(self, path, template):
@@ -38,6 +38,7 @@ class LinkedIn():
 
 
     def generate_pdtable(self):
+        """ Parses the CSV and creates a 'pandas' table with columns: Status, Name, Company, Position. """
         self.table = pd.read_csv(self.path)
         self.status = self.table['Added'].values.tolist()
         self.names = self.table['Full Name'].values.tolist()
@@ -50,6 +51,7 @@ class LinkedIn():
 
 
     def get_persons(self):
+        """ Inserts each person into the table. """
         result = []
         if self.template == 'Default':
             for row in zip(self.names, self.companies, self.company_types, self.positions):
@@ -62,10 +64,12 @@ class LinkedIn():
 
 
     def write_found(self):
+        """ Updates corresponding row number, marking Found. """
         self.table.set_value(self.row_number - 2, 'Added', 'X')
         self.table.to_csv(self.path, index=False)
 
 
     def write_not_found(self):
+        """ Updates corresponding row number, marking Not Found. """
         self.table.set_value(self.row_number - 2, 'Added', 'Not Found')
         self.table.to_csv(self.path, index=False)

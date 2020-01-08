@@ -11,6 +11,7 @@ Ui_MainWindow, QtBaseClass = uic.loadUiType('LinkedIn_UI.ui')
 
 class MyApp(QMainWindow):
     def __init__(self):
+        """ Initializes Window for GUI, dictionary of Principals in the office, and various button and label setups in the form. """
         super(MyApp, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -46,6 +47,7 @@ class MyApp(QMainWindow):
 
 
     def file_clicked(self):
+        """ Loads the specified CSV file (found in the textbox) into memory when User clicks Enter button, if the file exists. """
         path = self.ui.filename_box.toPlainText()
         if path == 'Enter CSV file name               (eg, contacts.csv)':
             path = ''
@@ -70,6 +72,7 @@ class MyApp(QMainWindow):
 
 
     def enter_clicked(self):
+        """ Parses the specified CSV file and goes to the designated row (found in the textbox) in the file, if the row exists. """
         try:
             row = int(self.ui.row_box.toPlainText())
 
@@ -97,18 +100,21 @@ class MyApp(QMainWindow):
 
 
     def found_clicked(self):
+        """ User found the displayed contact; marks the contact as "Found" and moves the program to the next row of the CSV. """
         if self.LI != None:
             self.LI.write_found()
             self.next_clicked()
 
 
     def not_found_clicked(self):
+        """ User could not find the displayed contact; marks the contact as "Not Found" and moves the program to the next row of the CSV. """
         if self.LI != None:
             self.LI.write_not_found()
             self.next_clicked()
 
 
     def person_info_clicked(self):
+        """ Copies the information about a contact in the informational textbox to the User's clipboard (to search). """
         if self.LI != None:
             text = self.ui.person_info.toPlainText()
             name_and_company = text.split('\n')[:2]
@@ -118,12 +124,14 @@ class MyApp(QMainWindow):
 
 
     def person_msg_clicked(self):
+        """ Copies the generated message to send to the contact to the User's clipboard (to send as a note). """
         if self.LI != None:
             text = self.ui.person_msg.toPlainText()
             subprocess.run(['clip.exe'], input=text.strip().encode('utf-16'), check=True)
 
 
     def next_clicked(self):
+        """ Used for when User wants to skip a contact, and moves the program to the next row. """
         if self.LI != None:
             self.LI.row_number += 1
             self.set_window()
@@ -131,14 +139,17 @@ class MyApp(QMainWindow):
 
 
     def get_person_selected(self):
+        """ Select the Principal to sign off on the generated message (when connecting on """
         return self.ui.person_combo.currentText()
 
 
     def get_template_selected(self):
+        """ Fetches the template to use to parse the specified CSV file (Default, Law Firms). """
         return self.ui.template_combo.currentText()
 
 
     def set_window(self):
+        """ Initializes Window settings to generate the Form. """
         self.ui.row_box.setPlainText(str(self.LI.row_number))
         self.ui.person_counter.setText(str(self.LI.row_number) + ' / ' + str(self.LI.max_rows + 1))
 
@@ -154,6 +165,7 @@ class MyApp(QMainWindow):
 
 
     def generate_msg(self, person):
+        """ Provides different template for each type of contact (Accountants, Consultants, Attorneys, Executives, etc.) and generates a relevant message for the contact. """
         if self.get_template_selected() == 'Default':
             name, type, role = person[0], person[2], person[3]
             name = name.split()
@@ -201,7 +213,6 @@ class MyApp(QMainWindow):
 
 
             elif (any(x in type.split() for x in {'Executive', 'Director', 'Manager', 'Managing'})) or (any(x in role.split() for x in {'Executive', 'Director', 'Manager', 'Managing'})):
-                print("GOOD")
                 return 'Dear {first} {last},\n\n' \
                        'I am expanding my contact base of well-established business executives particularly ' \
                        'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
@@ -216,8 +227,6 @@ class MyApp(QMainWindow):
 
 
             else:
-                print(role.split())
-                print(type.split())
                 return 'Dear {first} {last},\n\n' \
                        'I am expanding my contact base of well-established _____________ particularly' \
                        'with experience/interest in M&A/Corporate Finance as a resource for our firm’s clients.\n\n' \
