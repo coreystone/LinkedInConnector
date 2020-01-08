@@ -15,7 +15,7 @@ class LinkedIn():
         print('template = ', template)
 
         if path == '':
-            os.chdir('C:/Users/itadmin/PycharmProjects/LinkedIn Program')
+            os.chdir('C:/.../Projects/LinkedInProgram')
             files = [file for file in glob.glob('*.csv')]
             if len(files) == 1:
                 self.path = files[0]
