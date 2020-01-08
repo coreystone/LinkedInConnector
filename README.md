@@ -18,8 +18,8 @@ with functional buttons to manipulate the CSV, search for contacts, and generate
 
 # Libraries
 * To parse the CSV file full of hundreds to thousands of contacts, I used the [**csv**](https://docs.python.org/3/library/csv.html) Python libarary.
-* To deal with all of this data, I implemented the [**pandas**](https://pandas.pydata.org/) libarary to form and manipulate tables.
-* To encapsulate the program into a GUI able to used by my coworkers, I used [**PyQt5**](https://pypi.org/project/PyQt5/), allowing me to create Windos Forms.
+* To deal with all of this data, the [**pandas**](https://pandas.pydata.org/) libarary helped to form and manipulate tables.
+* To encapsulate the program into a GUI, I used [**PyQt5**](https://pypi.org/project/PyQt5/), allowing me to create Windows Forms. This allowed me to make something that could be used by others in the office with little to no hassle. 
 
 
 # Walkthrough
