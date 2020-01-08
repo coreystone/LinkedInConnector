@@ -9,7 +9,7 @@ with up to thousands of rows, and manually copying and pasting cells to search o
 look manually go row-by-row through a CSV of contacts, manually searching for each person, create a message to send to them,
 and finally mark if they were found or not on the CSV file. 
 
-!(https://github.com/coreystone/LinkedInConnector/blob/master/RedactedPreview.PNG)
+![alt text](https://github.com/coreystone/LinkedInConnector/blob/master/RedactedPreview.PNG "")
 
 
 This program alleviates this struggle by automatically parsing each row and displaying it in an easily consumed GUI,
@@ -23,4 +23,4 @@ with functional buttons to manipulate the CSV, search for contacts, and generate
 
 
 # Walkthrough
-!(https://github.com/coreystone/LinkedInConnector/blob/master/Walkthrough.png)
+![alt text](https://github.com/coreystone/LinkedInConnector/blob/master/Walkthrough.png "")
