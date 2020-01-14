@@ -11,16 +11,14 @@ and finally mark if they were found or not on the CSV file.
 
 ![alt text](https://github.com/coreystone/LinkedInConnector/blob/master/RedactedPreview.PNG "")
 
-
 This program alleviates this struggle by automatically parsing each row and displaying it in an easily consumed GUI,
 with functional buttons to manipulate the CSV, search for contacts, and generate messages for them in the click of a button.
 
+## Walkthrough
+![alt text](https://github.com/coreystone/LinkedInConnector/blob/master/Walkthrough.png "")
 
 ## Libraries
 * To parse the CSV file full of hundreds to thousands of contacts, I used the [**csv**](https://docs.python.org/3/library/csv.html) Python libarary.
 * To deal with all of this data, the [**pandas**](https://pandas.pydata.org/) libarary helped to form and manipulate tables.
 * To encapsulate the program into a GUI, I used [**PyQt5**](https://pypi.org/project/PyQt5/), allowing me to create Windows Forms. This allowed me to make something that could be used by others in the office with little to no hassle. 
 
-
-## Walkthrough
-![alt text](https://github.com/coreystone/LinkedInConnector/blob/master/Walkthrough.png "")
